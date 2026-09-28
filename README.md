@@ -1,56 +1,15 @@
 # Product Review Web App
 
-**A Flask application linking review extraction, data processing and a browser interface.**
+This is a Flask coursework application for collecting and examining product reviews. A user supplies a product identifier, and the application parses review fields, prepares the data and presents it through browser pages and export routes.
 
-![Product reviews, in a browser.](assets/readme-overview.png)
+The route handlers are in [app/routes.py](app/routes.py). Parsing and conversion helpers are in [app/utils.py](app/utils.py). The separate [analysis notebooks](https://github.com/oldprize47-SH/ceneo-review-analysis) cover the related notebook workflow.
 
-[What I built](#what-i-built) · [My role](#my-role) · [Code and reproduction](#code-and-reproduction) · [Portfolio](https://github.com/oldprize47-SH)
+## Running locally
 
-## What I built
+The historical entry point is `python run.py`. Dependencies are recorded in [requirements.txt](requirements.txt), but that environment has not been freshly installed. Some packages are platform-specific.
 
-| Deliverable | What it does | Explore |
-|---|---|---|
-| **Web routes** | Pages, extraction and export endpoints | [Source / result](app/routes.py) |
-| **Data helpers** | Parsing and conversion logic | [Source / result](app/utils.py) |
-| **Entry point** | Historical local development entry | [Source / result](run.py) |
+The original application starts its development server during import and enables debug mode. It needs adjustment before deployment. The Python files were checked for syntax; the server, scraper and translation requests were not run during this portfolio update.
 
-### Result at a glance
+The reviews and product content belong to their original authors and platform. This copy preserves the public course archive and does not add newly collected reviews.
 
-Python syntax checked. The server and live collection were not run; the archived debug setup is for local development.
-
-## My role
-
-This fork preserves the existing public application and its history. It does not claim ownership of the reviewed products, review text or upstream platform.
-
-## How it works
-
-```mermaid
-flowchart LR
-    N0["Choose a product"] --> N1
-    N1["Parse and analyse"] --> N2
-    N2["Browse and export"]
-```
-
-## Code and reproduction
-
-## Inspect before running
-
-The original application starts the development server during import and enables
-debug mode. The historical entry point is `python run.py` after environment setup;
-this is a local coursework workflow, not a production deployment instruction.
-The pinned dependency snapshot includes platform-specific packages and has not
-been freshly installed in this pass.
-
-Python source parsed successfully on 2026-09-28. No server, scraper, translation
-request or new review collection was run. Existing review exports remain inherited
-public archive material; no new personal data was added.
-
-[Related analysis notebooks](https://github.com/oldprize47-SH/ceneo-review-analysis)
-
-## Source and credits
-
-[Original repository](https://github.com/sangheon47/CeneoWebScraperSH) · [Portfolio home](https://github.com/oldprize47-SH)
-
-[Original README](README.original.md) is retained alongside the source history.
-
-Course scaffolding, team contributions and third-party assets retain their original attribution. This documentation does not grant a new licence.
+[Original repository](https://github.com/sangheon47/CeneoWebScraperSH). Original history and attribution are retained.
