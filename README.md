@@ -1,26 +1,37 @@
 # Product Review Web App
 
-![Product Review Web App overview](assets/portfolio-cover.png)
+**A Flask application linking review extraction, data processing and a browser interface.**
 
-A Flask coursework application that connects product-review collection, analysis and a browser interface. It is supplementary software experience alongside the embedded/control portfolio.
+![Product reviews, in a browser.](assets/readme-overview.png)
 
-[Portfolio home](https://github.com/oldprize47-SH) · [Original repository](https://github.com/sangheon47/CeneoWebScraperSH)
+[What I built](#what-i-built) · [My role](#my-role) · [Code and reproduction](#code-and-reproduction) · [Portfolio](https://github.com/oldprize47-SH)
 
-[Original project README](README.original.md)
+## What I built
 
-## Contribution and context
+| Deliverable | What it does | Explore |
+|---|---|---|
+| **Web routes** | Pages, extraction and export endpoints | [Source / result](app/routes.py) |
+| **Data helpers** | Parsing and conversion logic | [Source / result](app/utils.py) |
+| **Entry point** | Historical local development entry | [Source / result](run.py) |
+
+### Result at a glance
+
+Python syntax checked. The server and live collection were not run; the archived debug setup is for local development.
+
+## My role
 
 This fork preserves the existing public application and its history. It does not claim ownership of the reviewed products, review text or upstream platform.
 
-## Code map
+## How it works
 
-| Entry | Purpose |
-|---|---|
-| [run.py](run.py) | Imports the Flask application |
-| [app/__init__.py](app/__init__.py) | Historical development-server startup |
-| [app/routes.py](app/routes.py) | Pages, extraction and export routes |
-| [app/utils.py](app/utils.py) | Parsing and data-conversion helpers |
-| [requirements.txt](requirements.txt) | Recorded dependency snapshot |
+```mermaid
+flowchart LR
+    N0["Choose a product"] --> N1
+    N1["Parse and analyse"] --> N2
+    N2["Browse and export"]
+```
+
+## Code and reproduction
 
 ## Inspect before running
 
@@ -36,9 +47,10 @@ public archive material; no new personal data was added.
 
 [Related analysis notebooks](https://github.com/oldprize47-SH/ceneo-review-analysis)
 
-## Archive policy
+## Source and credits
 
-The fork retains upstream history, source attributions and course material. The
-portfolio documentation does not assign a new licence or claim sole authorship
-of inherited code. Current checks are stated above; an untested component is not
-presented as verified.
+[Original repository](https://github.com/sangheon47/CeneoWebScraperSH) · [Portfolio home](https://github.com/oldprize47-SH)
+
+[Original README](README.original.md) is retained alongside the source history.
+
+Course scaffolding, team contributions and third-party assets retain their original attribution. This documentation does not grant a new licence.
