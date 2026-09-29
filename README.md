@@ -10,6 +10,8 @@
 
 ## 한국어
 
+[코드 읽는 순서](#코드-따라-읽기)
+
 
 
 상품 리뷰를 수집하고 살펴보기 위한 Flask 수업 과제 애플리케이션입니다. 사용자가 상품 식별자를 입력하면 애플리케이션이 리뷰 필드를 파싱하고 데이터를 정리한 뒤, 브라우저 페이지와 내보내기 라우트를 통해 제공합니다.
@@ -28,11 +30,11 @@
 
 
 
-![프로젝트 목표: ceneo-review-webapp](docs/goals/project-focus-v1.png)
+![프로젝트 목표: ceneo-review-webapp](docs/goals/goal.png)
 
 
 
-AI로 생성한 콘셉트 일러스트입니다. 기기의 외형, 인터페이스 배치, 예시 그래픽은 설명을 위한 표현이며, 실제 프로젝트 사진이나 측정 결과가 아닙니다.
+<sub>AI 생성 개념도</sub>
 
 
 
@@ -52,7 +54,7 @@ AI로 생성한 콘셉트 일러스트입니다. 기기의 외형, 인터페이�
 
 
 
-문서화된 프로젝트 내용과 코드를 바탕으로 흐름을 살펴볼 수 있도록 재구성했습니다. 아래 설명에서 결과와 함께 검증한 범위와 한계를 확인할 수 있습니다. [SVG](docs/flowcharts/ceneo-web.svg)
+<sub>[SVG](docs/flowcharts/ceneo-web.svg)</sub>
 
 
 
@@ -67,6 +69,20 @@ AI로 생성한 콘셉트 일러스트입니다. 기기의 외형, 인터페이�
 애플리케이션은 리뷰 레코드와 상품 요약을 JSON 파일에 저장합니다. 이후 Pandas로 리뷰 수, 평균 점수, 평점·추천 여부 분포를 계산하고, Matplotlib으로 브라우저 페이지에 사용할 차트를 저장합니다. 상품 페이지는 리뷰 표를 보여 주며, 내보내기 라우트는 JSON, CSV, XLSX 다운로드를 제공합니다. 이 구현은 데이터베이스 기반 서비스 대신 로컬 파일을 사용해 이러한 작업을 수행합니다.
 
 
+
+### 코드 따라 읽기
+
+아래 순서는 파일의 역할과 연결을 이해하기 위한 안내입니다. 독립 과제나 보드별 프로그램은 한꺼번에 실행하지 않고 해당 항목의 실행 안내를 따릅니다.
+
+| 순서 | 파일 | 역할과 다음 단계 |
+|---|---|---|
+| 1 | [run.py](run.py) | 애플리케이션 시작점입니다. app을 가져오는 흐름부터 확인합니다. |
+| 2 | [app/__init__.py](app/__init__.py) | Flask 앱을 만들고 라우트와 연결합니다. 개발 서버 시작 동작도 확인합니다. |
+| 3 | [app/routes.py](app/routes.py) | extract 요청에서 리뷰 수집·JSON 저장으로, product와 charts에서 표시로 이어집니다. 다운로드 라우트도 이 파일에 있습니다. |
+| 4 | [app/utils.py](app/utils.py) | HTML 필드 추출, 평점·추천 여부 변환과 번역 보조 함수의 역할을 확인합니다. |
+| 5 | [app/templates](app/templates) | 라우트에서 전달한 데이터가 HTML 표와 페이지로 나타나는 부분입니다. |
+
+[기존 상세 튜토리얼과 원문](README.original.md)도 함께 보존했습니다.
 
 ### 소스 읽기
 
@@ -108,6 +124,8 @@ AI로 생성한 콘셉트 일러스트입니다. 기기의 외형, 인터페이�
 
 ## English
 
+[Code walkthrough](#code-walkthrough)
+
 
 
 **Product Review Web App**
@@ -130,11 +148,11 @@ Make product reviews easier to explore by collecting them into a web interface w
 
 
 
-![Project goal: ceneo-review-webapp](docs/goals/project-focus-v1.png)
+![Project goal: ceneo-review-webapp](docs/goals/goal.png)
 
 
 
-AI-generated concept illustration. Device appearance, interface layout and example graphics are illustrative, not project photographs or measured results.
+<sub>AI-generated concept illustration</sub>
 
 
 
@@ -154,7 +172,7 @@ The workflow could help someone explore collected product feedback by reading re
 
 
 
-This overview helps you follow the project through its documentation and code. The sections below explain the results and the limits of verification. [SVG](docs/flowcharts/ceneo-web.svg)
+<sub>[SVG](docs/flowcharts/ceneo-web.svg)</sub>
 
 
 
@@ -182,6 +200,20 @@ This archive comes from Sangheon Park's 2024 exchange-student coursework at Krak
 
 
 
+### Code walkthrough
+
+Use this order to understand each file and its connections. Independent exercises and board targets are not one executable; follow the relevant run instructions below.
+
+| Step | File | Role and next step |
+|---|---|---|
+| 1 | [run.py](run.py) | Start at the entry point and follow the app import. |
+| 2 | [app/__init__.py](app/__init__.py) | Inspect Flask creation, route registration and development-server startup behaviour. |
+| 3 | [app/routes.py](app/routes.py) | Follow extract through collection and JSON storage, then product/charts display and download routes. |
+| 4 | [app/utils.py](app/utils.py) | Inspect HTML field extraction, rating/recommendation conversion and translation helpers. |
+| 5 | [app/templates](app/templates) | Follow route data into HTML tables and pages. |
+
+The [original tutorial and documentation](README.original.md) remain available in full.
+
 ### Running locally
 
 
@@ -199,4 +231,3 @@ The reviews and product content belong to their original authors and platform. T
 
 
 [Original repository](https://github.com/sangheon47/CeneoWebScraperSH). Original history and attribution are retained.
-
