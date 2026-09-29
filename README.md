@@ -4,6 +4,24 @@ This is a Flask coursework application for collecting and examining product revi
 
 The route handlers are in [app/routes.py](app/routes.py). Parsing and conversion helpers are in [app/utils.py](app/utils.py). The separate [analysis notebooks](https://github.com/oldprize47-SH/ceneo-review-analysis) cover the related notebook workflow.
 
+## Project goal
+
+Make product reviews easier to explore by collecting them into a web interface with summaries, charts and exports.
+
+![Project goal: ceneo-review-webapp](docs/goals/project-focus-v1.png)
+
+AI-generated concept illustration. Device appearance, interface layout and example graphics are illustrative, not project photographs or measured results.
+
+## Where it could be used
+
+The workflow could help someone explore collected product feedback by reading review text alongside rating and recommendation distributions. Keeping structured review records also makes it possible to repeat an analysis without recollecting every page. The summaries describe the collected sample rather than all customers, and collection depends on the source site and permitted access.
+
+## At a glance
+
+![Ceneo review web application](docs/flowcharts/ceneo-web.png)
+
+Overview reconstructed from the documented project and code. Results and verification limits are described below. [SVG](docs/flowcharts/ceneo-web.svg)
+
 ## From a product number to a review page
 
 The extraction form passes a product ID to a Flask route. That route requests the product's review page, parses the review fields with BeautifulSoup and follows the next-page link until collection ends. The helper functions convert text fields such as ratings and recommendations into values that are easier to analyse. Translation helpers are also present for Polish review text.
@@ -14,7 +32,7 @@ The application stores review records and a product summary in JSON files. It th
 
 Start with [app/routes.py](app/routes.py) to follow form submission, collection, storage and the redirect to a product page. Read [app/utils.py](app/utils.py) alongside it to see the field selectors and transformations. The [templates](app/templates) show how the stored information is presented. The [notebook project](https://github.com/oldprize47-SH/ceneo-review-analysis) makes the collection and analysis steps easier to inspect separately.
 
-I worked on this during my 2024 exchange at Krakow University of Economics. It is preserved as coursework. The available records do not identify the authorship of every piece of supplied scaffolding, so I do not present the entire archive as a product built independently from scratch.
+This archive comes from Sangheon Park's 2024 exchange-student coursework at Krakow University of Economics. The routes, parsing helpers and templates form the application described above. The available records do not establish separate team roles or individual authorship of every supplied scaffold; no additional contributor split is inferred.
 
 ## Running locally
 
